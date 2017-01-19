@@ -6,14 +6,18 @@ exports = module.exports = function(req, res) {
 		locals = res.locals;
 	
 	locals.section = 'about';
-	locals.page.title = 'About SydJS';
+	locals.page.title = 'About CEO';
 	
 	locals.organisers = [
-		{ name: 'Craig Sharkie', image: '/images/organiser-craig_sharkie.jpg', twitter: 'twalve',       title: 'Founder, MC, coordinator' },
-		// { name: 'Thinkmill', image: '/images/organiser-thinkmill.jpg',     twitter: 'thethinkmill', title: 'Site coordinator' },
-		{ name: 'Gil Davidson',     image: '/images/organiser-gil_davidson.jpg',     twitter: 'iamnotyourbroom',   title: 'Atlassian coordinator' },
-		{ name: 'Adam Ahmed',    image: '/images/organiser-adam_ahmed.jpg',    twitter: 'hitsthings',   title: 'Atlassian coordinator' },
-		{ name: 'Lachlan Hardy', image: '/images/organiser-lachlan_hardy.jpg', twitter: 'lachlanhardy', title: 'Community coordinator' }
+		{ name: '金兆阳', image: '/images/organiser-jzy.jpg', linkedin: 'larry-zhaoyang-jin-51927361',       field: '能源工程博士', title: 'Co-President' },
+		{ name: '张灵',     image: '/images/organiser-zl.jpg',     linkedin: 'ella-zhang-992b9817',   field: 'MBA', title: 'Co-President' }
+	]
+	
+	locals.vporganisers = [
+		{ name: '王竞凡',    image: '/images/organiser-wjf.jpg',    linkedin: 'jingfan-wang',   field: '能源工程博士', title: 'VP (Operations)' },
+		{ name: '臧晓羽', image: '/images/organiser-zxy.jpg', linkedin: 'xyzang', field: '化学博士', title: 'VP (Marketing)' },
+		{ name: '熊婧',    image: '/images/organiser-xj.jpg',    linkedin: 'xiongjing',   field: '电子工程博士', title: 'VP (Business Development)' },
+		{ name: '冯玄', image: '/images/organiser-fx.jpg', linkedin: 'xuan-feng-6b562124', field: 'MBA', title: 'VP (Finance)' }
 	]
 	
 	view.render('site/about');

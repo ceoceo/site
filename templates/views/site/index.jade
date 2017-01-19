@@ -80,27 +80,27 @@ block content
 		
 		//- About
 		article.section.section--featured.home-about: .container
-			h2 In Sydney and into JavaScript? You need to join SydJS!
+			h2 Join CEO!
 			.row: .col-sm-8.col-sm-offset-2
-				p.lead Every 3rd Wednesday of the month you'll find us talking about what we're doing and what's happening around us in the world of JavaScript.
+				p.lead If you are passionate about promoting entrepreneurship and creating a supportive community for Chinese entrepreneurs in the valley and around the world.
 			if !user
 				.row: .col-sm-4.col-sm-offset-4
 					a(href='/join', data-from=page.path).js-auth-trigger.btn.btn-lg.btn-block.btn-primary.mv-1
-						span.text-caps Join SydJS now
+						span.text-caps Join CEO now
 			p.mt-1
-				a(href='/about') Learn more about SydJS
+				a(href='/about') Learn more about CEO
 				|  &nbsp;&middot;&nbsp; 
-				a(href='/members') Find your friends in SydJS
-			p.mt-1: a(href="https://twitter.com/sydjs", class="twitter-follow-button", data-show-count="true", data-size="large") Follow @sydjs
+				a(href='/members') Find your friends in CEO
+			p.mt-1: a(href="https://www.linkedin.com/groups/7058836", class="twitter-follow-button", data-show-count="true", data-size="large") Follow CEO Linkedin group
 //- JS
 block js
 
 	if meetup
 		script.
-			SydJS.currentMeetupId = !{JSON.stringify(meetup.id)};
+			CEO.currentMeetupId = !{JSON.stringify(meetup.id)};
 	if user
 		script.
-			SydJS.user = !{JSON.stringify(user)};
+			CEO.user = !{JSON.stringify(user)};
 
 	//- REACT SCRIPTS
 	script(src='/js/packages.js')

@@ -4,38 +4,36 @@ include ../../mixins/organiser
 
 block intro
 	.page-intro: .container
-		h1.page-title About
-		p.lead Every 3rd Wednesday of the month you'll find us talking about what we're doing and what's happening around us in the world of JavaScript.
-		p.lead SydJS wouldn't be possible without our organisers:
+		h1.page-title 斯坦福华人创业者协会
+		h1.page-title Chinese Entrepreneur Organization
+		p.lead CEO organizes in-depth small-group entrepreneurial talks, brainstorm sessions, etc.
 
 block content
 	.page-content
 		.section.highlight: .container
 			//- h2 Organisers
-			//- p.lead Each month the SydJS team works to bring you great presenters in a great venue.
+			//- p.lead Each month the CEO team works to bring you great presenters in a great venue.
 			.row.about-organisers
+				.col-sm-3
 				each org in organisers
 					.col-sm-3
 						+organiser(org)
-			
+			br
+			br
+			.row.about-organisers
+				each org in vporganisers
+					.col-sm-3
+						+organiser(org)
 		
 		//- CODE
 		.section: .container-sm
-			h2 Code of Conduct
-			h5 We choose to share JavaScript's good parts; and we choose to share our own.
-			p The Sydney JavaScript community is full of wonderful people from a diverse range of backgrounds, and we want to ensure it remains a welcoming and safe environment to all who wish to be a part of it.
-			p Whenever we come together as a community, our shared spaces are opportunities to showcase the best of what we can be. We are there to support our peers - to build each other up, to accept each other for who they are, and to encourage each other to become the people they want to be.
-			p With that in mind, if you are present at any SydJS event, whether as an attendee, organiser, sponsor, or speaker, we take it as given that you agree to follow this code of conduct:
-			p The SydJS community is dedicated to providing harassment-free experiences at events and conferences for everyone regardless of who they are or what they believe. We do not tolerate harassment in any form.
-			p All communication should be appropriate for a professional audience including people of many different backgrounds.
-			p Be kind and respectful towards others. Remember that harassment and exclusionary jokes are not appropriate for events supported by SydJS.
-			p Anyone violating these rules at events may be asked to leave the event without a refund at the sole discretion of the organisers.
-			p If you or someone else is subject to harassment, or you have a concern, please contact the event organisers (who will introduce themselves at the beginning of the event).
-			p The SydJS community is a welcoming and friendly place – thank you for being a part of it.
-			p If you believe in building people, communities, and software, then you are a part of us.
+			h2 ABOUT CEO
+			h5 To build the best educational and communicational platform of entrepreneurship for all Chinese entrepreneurs and investors around the globe.
+			p CEO (Chinese Entrepreneur Organization, www.ceoceo.org) 华人者创业协会由斯坦福大学学生和校友于2008年在美国硅谷创办，旨在沟通工程师及商务人士，连接正在和准备创业的华人。CEO成员先后创立了聚美优品 (陈欧)、出门问问 (朱祎舟)、Hover Cam (王孟秋）、Alohar Mobile (王辰宇)、小红书 (毛文超)等优秀企业；也有部分成员加入金沙江创投、 IDG、 FreeS、真格基金等知名投资机构；或者进入Google, Twitter, Coursera等硅谷大型科技企业或新兴科技公司。自成立以来，CEO多次举办创业投资讲座，线下创业者聚会等活动，讨论科技趋势和创业想法。也曾邀请雷军、周鸿祎等百余名成功华人创业家与大家面对面分享经验。今年，CEO更是联合硅谷知名投资机构，举办专业技术的闭门讨论，针对最尖端科技的商业化进行头脑风暴。为促进国内外华人创业者之间的交流，CEO Startup Trek每年夏天带领斯坦福校友以及硅谷杰出人才与创业者回国，就新兴技术和商业动向与国内创业者进行交流学习。如今，CEO已有超过4000名会员，其中不仅凝聚了斯坦福大学的学生和校友，还吸引了硅谷及全球的华人创业者的加入。
+			p CEO - Chinese Entrepreneur Organization (www.ceoceo.org) was founded in 2008 by a group of business-minded students and talented Engineering students at Stanford. The organization serves as a platform to connect Chinese entrepreneurs and people who are interested in entrepreneurship in Silicon Valley. Since our inception, we have been hosting in-depth talks by top investors and outstanding entrepreneurs, facilitating exchange of brilliant ideas among the rich talent pool in our membership base. Many of our members have successfully formed new ventures including jumei.com (Ou Chen), chumenwenwen.com (Yizhou Zhu), Hover Cam (Mengqiu Wang), Alohar Mobile (Larry Wang), Xiaohongshu (Charlwin Mao), or joined top tech companies and VCs, such as. GSR VC, IDG, FreeS, and Google. CEO has also organized summer trip - CEO Startup Trek, to visit outstanding startup companies in China. CEO Startup Trek aims to help Chinese entrepreneurs or talented Engineers in Silicon Valley communicate in person with successful Chinese entrepreneurs and learn from their experience. CEO is dedicated to creating a supportive community for Chinese entrepreneurs, and building the best educational and communicational platform of entrepreneurship for Chinese entrepreneurs and investors around the globe. Currently, CEO has more than 4000 subscribers, including current Stanford students, alumni and young professionals in the Valley.
 			hr.mv-3
-			h5 Thank you
-			p This Code of Conduct has learned and borrowed much from others - especially <a href='http://ruby.org.au/code-of-conduct.html'>rubyaustralia</a>, <a href='http://jsconf.com/codeofconduct.html'>JSConf</a>, and <a href='https://gist.github.com/jcasimir/6992184'>Jeff Casimir</a>. Thank you to all who provided inspiration and feedback.
+			h5 Join us
+			p If you are passionate about promoting entrepreneurship and creating a supportive community for Chinese entrepreneurs in the valley and around the world.
 
 block js
 	// twitter
