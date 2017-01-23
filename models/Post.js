@@ -59,13 +59,13 @@ Post.schema.methods.notifyAdmins = function(callback) {
 				admin: admin.name.first || admin.name.full,
 				author: results.author ? results.author.name.full : 'Somebody',
 				title: post.title,
-				keystoneURL: 'http://www.sydjs.com/keystone/post/' + post.id,
-				subject: 'New Post to SydJS'
+				keystoneURL: 'http://www.ceoceo.org/keystone/post/' + post.id,
+				subject: 'New Post to CEO'
 			}, {
 				to: admin,
 				from: {
-					name: 'SydJS',
-					email: 'contact@sydjs.com'
+					name: 'CEO',
+					email: 'contact@ceoceo.org'
 				}
 			}, done);
 		}, callback);
