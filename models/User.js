@@ -19,7 +19,8 @@ var deps = {
 	github: { 'services.github.isConfigured': true },
 	facebook: { 'services.facebook.isConfigured': true },
 	google: { 'services.google.isConfigured': true },
-	twitter: { 'services.twitter.isConfigured': true }
+	twitter: { 'services.twitter.isConfigured': true },
+	linkedin: { 'services.linkedin.isConfigured': true }
 }
 
 User.add({
@@ -35,6 +36,7 @@ User.add({
 	photo: { type: Types.CloudinaryImage },
 	github: { type: String, width: 'short' },
 	twitter: { type: String, width: 'short' },
+	linkedin: { type: String, width: 'short' },
 	website: { type: Types.Url },
 	bio: { type: Types.Markdown },
 	gravatar: { type: String, noedit: true }
@@ -100,6 +102,17 @@ User.add({
 
 			accessToken: { type: String, label: 'Access Token', dependsOn: deps.twitter },
 			refreshToken: { type: String, label: 'Refresh Token', dependsOn: deps.twitter }
+		},
+		linkedin: {
+			isConfigured: { type: Boolean, label: 'Linkedin has been authenticated' },
+
+			profileId: { type: String, label: 'Profile ID', dependsOn: deps.linkedin },
+
+			username: { type: String, label: 'Username', dependsOn: deps.linkedin },
+			avatar: { type: String, label: 'Image', dependsOn: deps.linkedin },
+
+			accessToken: { type: String, label: 'Access Token', dependsOn: deps.linkedin },
+			refreshToken: { type: String, label: 'Refresh Token', dependsOn: deps.linkedin }
 		}
 	}
 }, 'Meta', {
@@ -180,6 +193,7 @@ User.schema.virtual('avatarUrl').get(function() {
 	if (this.services.facebook.isConfigured && this.services.facebook.avatar) return this.services.facebook.avatar;
 	if (this.services.google.isConfigured && this.services.google.avatar) return this.services.google.avatar;
 	if (this.services.twitter.isConfigured && this.services.twitter.avatar) return this.services.twitter.avatar;
+	if (this.services.linkedin.isConfigured && this.services.linkedin.avatar) return this.services.linkedin.avatar;
 	if (this.gravatar) return 'http://www.gravatar.com/avatar/' + this.gravatar + '?d=http%3A%2F%2Fsydjs.com%2Fimages%2Favatar.png&r=pg';
 });
 
@@ -189,6 +203,9 @@ User.schema.virtual('twitterUsername').get(function() {
 });
 User.schema.virtual('githubUsername').get(function() {
 	return (this.services.github && this.services.github.isConfigured) ? this.services.github.username : '';
+});
+User.schema.virtual('linkedinUsername').get(function() {
+	return (this.services.linkedin && this.services.linkedin.isConfigured) ? this.services.linkedin.username : '';
 });
 
 
@@ -205,11 +222,11 @@ User.schema.methods.resetPassword = function(callback) {
 		new keystone.Email('forgotten-password').send({
 			user: user,
 			link: '/reset-password/' + user.resetPasswordKey,
-			subject: 'Reset your SydJS Password',
+			subject: 'Reset your CEO Password',
 			to: user.email,
 			from: {
-				name: 'SydJS',
-				email: 'contact@sydjs.com'
+				name: 'CEO',
+				email: 'ceoleadershipteam@gmail.com'
 			}
 		}, callback);
 	});

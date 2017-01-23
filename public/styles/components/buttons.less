@@ -74,6 +74,9 @@
 
 // social
 
+.btn-linkedin {
+	.button-base(white; @brand-linkedin; @brand-linkedin);
+}
 .btn-github {
 	.button-base(white; @brand-github; @brand-github);
 }
@@ -89,6 +92,13 @@
 
 // social links
 
+.btn-link-linkedin {
+	.btn-link();
+
+	&, &:hover, &:focus {
+		color: @brand-linkedin;
+	}
+}
 .btn-link-github {
 	.btn-link();
 

@@ -59,6 +59,7 @@ exports = module.exports = function(req, res) {
 			case 'facebook': req.user.services.facebook.isConfigured = null; serviceName = 'Facebook'; break;
 			case 'google': req.user.services.google.isConfigured= null; serviceName = 'Google'; break;
 			case 'twitter': req.user.services.twitter.isConfigured = null; serviceName = 'Twitter'; break;
+			case 'linkedin': req.user.services.linkedin.isConfigured = null; serviceName = 'Linkedin'; break;
 		}
 		
 		req.user.save(function(err) {

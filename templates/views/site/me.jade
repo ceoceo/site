@@ -38,11 +38,18 @@ block content
 							|  When there is a new post
 				hr.mv-2
 				h3 Your Services
-				p.help-block.mb-2 You can authenticate yourself on the CEO website with any of the services you connect. When connected, links to your Twitter and Github will be displayed on your profile.
+				p.help-block.mb-2 You can authenticate yourself on the CEO website with any of the services you connect. When connected, links to your Linkedin, Twitter and Github will be displayed on your profile.
 				
 				
 				//- Unconfigured Services
 				
+				if !user.services.linkedin.isConfigured
+					.form-group
+						label.col-sm-2.control-label Linkedin
+						.col-sm-10
+							a(href='/auth/linkedin', title='Connect your Linkedin account').btn.btn-linkedin
+								span.entypo-social.entypo-linkedin
+								|  Connect your Linkedin account
 				if !user.services.github.isConfigured
 					.form-group
 						label.col-sm-2.control-label Github
@@ -75,8 +82,15 @@ block content
 				
 				//- Configured Services
 				
-				if user.services.github.isConfigured || user.services.twitter.isConfigured || user.services.google.isConfigured || user.services.facebook.isConfigured
+				if user.services.linkedin.isConfigured || user.services.github.isConfigured || user.services.twitter.isConfigured || user.services.google.isConfigured || user.services.facebook.isConfigured
 					hr.line-dashed
+				if user.services.linkedin.isConfigured
+					.form-group
+						label.col-sm-2.control-label Linkedin
+						.col-sm-10.text-muted.faux-label
+							span.entypo-social.entypo-linkedin
+							|  Your account is connected. 
+							a(href='?disconnect=linkedin', title='Revoke authorization of your Linkedin account') Disconnect
 				if user.services.github.isConfigured
 					.form-group
 						label.col-sm-2.control-label Github
