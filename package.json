@@ -47,6 +47,7 @@
   },
   "scripts": {
     "start": "node keystone.js",
-    "print-graphql-schema": "babel-node ./graphql/scripts/printSchema.js"
+    "print-graphql-schema": "babel-node ./graphql/scripts/printSchema.js",
+    "deploy": "pm2 deploy ceoceo.json production"
   }
 }
