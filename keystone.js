@@ -76,7 +76,7 @@ keystone.set('email locals', {
 	host: (function() {
 		if (keystone.get('env') === 'staging') return 'http://ceoceo-beta.herokuapp.com';
 		if (keystone.get('env') === 'production') return 'http://ceoceo.org';
-		return (keystone.get('host') || 'http://localhost:') + (keystone.get('port') || '3000');
+		return (keystone.get('host') || 'http://localhost:') + (keystone.get('port') || '8080');
 	})()
 });
 
