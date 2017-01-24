@@ -41,6 +41,9 @@
     "store-prototype": "1.1.1",
     "superagent": "1.8.5"
   },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
   "engines": {
     "node": "~4.2.0",
     "npm": "~2.14.3"
