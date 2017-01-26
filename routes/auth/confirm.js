@@ -118,9 +118,11 @@ exports = module.exports = function(req, res) {
 					console.log('------------------------------------------------------------');
 					
 					var userData = {
-						state: 'enabled',
+						state: 'enabled', 
 						
 						website: locals.form.website,
+
+						bio: { md: `${locals.authUser.bio.headline} <br /> ${locals.authUser.bio.summary}` },
 						
 						isVerified: true,
 						
@@ -158,7 +160,7 @@ exports = module.exports = function(req, res) {
 				
 					console.log('[auth.confirm] - Creating new user...');
 					console.log('------------------------------------------------------------');
-					
+					console.log(locals)
 					var userData = {
 						name: {
 							first: locals.form['name.first'],
@@ -170,6 +172,8 @@ exports = module.exports = function(req, res) {
 						state: 'enabled',
 						
 						website: locals.form.website,
+
+						bio: { md: `${locals.authUser.bio.headline} <br /> ${locals.authUser.bio.summary}` },
 						
 						isVerified: true,
 						
