@@ -10,7 +10,7 @@ block content
 		else
 			- var twitterUsername = member.twitterUsername || (member.twitter ? member.twitter.replace('@', ''): '');
 			- var githubUsername = member.githubUsername || (member.github ? member.github.replace('@', '') : '');
-			- var linkedinUsername = member.linkedinUsername || (member.linkedin ? member.linkedin.replace('@', '') : '');
+			- var linkedinUsername = member.linkedinUsername || (member.website ? member.website.replace('https://linkedin.com/in/', '') : '');
 			.page-intro
 				.text-left: a(href='/members').text-muted &larr; back to all members
 				//- hr
