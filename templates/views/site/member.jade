@@ -10,7 +10,7 @@ block content
 		else
 			- var twitterUsername = member.twitterUsername || (member.twitter ? member.twitter.replace('@', ''): '');
 			- var githubUsername = member.githubUsername || (member.github ? member.github.replace('@', '') : '');
-			- var linkedinUsername = member.linkedinUsername || (member.website ? member.website.replace('https://linkedin.com/in/', '') : '');
+			- var linkedinUsername = member.linkedinUsername || (member.website ? member.website.replace('https://www.linkedin.com/in/', '') : '');
 			.page-intro
 				.text-left: a(href='/members').text-muted &larr; back to all members
 				//- hr
@@ -39,7 +39,6 @@ block content
 									if linkedinUsername
 										a(href='https://linkedin.com/in/' + linkedinUsername, target='_blank', data-toggle='tooltip', data-title=linkedinUsername, data-placement='top').member__account.member__account--linkedin.btn.btn-default
 											span.entypo-social.entypo-linkedin
-											=linkedinUsername
 							if member.bio.html
 								!= member.bio.html
 				if member.talks && member.talks.length

@@ -13,7 +13,7 @@ block intro
 mixin member(member)
 	- var twitterUsername = member.twitterUsername || (member.twitter ? member.twitter.replace('@', ''): '');
 	- var githubUsername = member.githubUsername || (member.github ? member.github.replace('@', '') : '');
-	- var linkedinUsername = member.linkedinUsername || (member.linkedin ? member.linkedin.replace('@', '') : '');
+	- var linkedinUsername = member.linkedinUsername || (member.website ? member.website.replace('https://www.linkedin.com/in/', '') : '');
 
 	li.member-item
 		.member.member--card
@@ -23,7 +23,7 @@ mixin member(member)
 				h5.member__title(class=(member.bio.html ? null : 'member__title-only')): a(href=member.url)= member.name.full
 				if member.bio.html
 					.member__bio!=utils.cropString( utils.htmlToText(member.bio.html), 100, '...', true )
-				if twitterUsername || member.github || member.linkedin
+				if twitterUsername || githubUsername || linkedinUsername
 					.member__accounts.hidden-xs
 						if twitterUsername
 							a(href='https://twitter.com/' + twitterUsername, target='_blank', data-toggle='tooltip', data-title='@' + twitterUsername, data-placement='top', data-container='#members').member__account.member__account--twitter.is-tooltip
