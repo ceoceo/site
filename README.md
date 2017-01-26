@@ -75,3 +75,4 @@ The first time you run the site, the homepage will warn you that it expects ther
 You'll probably want to add some other content too (blog post, members, etc) to get all the pages looking right.
 
 ... happy hacking!
+
