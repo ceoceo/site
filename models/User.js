@@ -194,7 +194,7 @@ User.schema.virtual('avatarUrl').get(function() {
 	if (this.services.google.isConfigured && this.services.google.avatar) return this.services.google.avatar;
 	if (this.services.twitter.isConfigured && this.services.twitter.avatar) return this.services.twitter.avatar;
 	if (this.services.linkedin.isConfigured && this.services.linkedin.avatar) return this.services.linkedin.avatar;
-	if (this.gravatar) return 'http://www.gravatar.com/avatar/' + this.gravatar + '?d=http%3A%2F%ceoceo.org%2Fimages%2Favatar.png&r=pg';
+	if (this.gravatar) return 'https://s.gravatar.com/avatar/' + this.gravatar;
 });
 
 // Usernames
