@@ -22,7 +22,7 @@ mixin member(member)
 			.member-section.member__info
 				h5.member__title(class=(member.bio.html ? null : 'member__title-only')): a(href=member.url)= member.name.full
 				if member.bio.html
-					.member__bio!=utils.cropString( utils.htmlToText(member.bio.html), 100, '...', true )
+					.member__bio!=utils.cropString( utils.htmlToText(member.bio.html), 60, '...', true )
 				if twitterUsername || githubUsername || linkedinUsername
 					.member__accounts.hidden-xs
 						if twitterUsername
