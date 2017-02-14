@@ -13,7 +13,7 @@ block intro
 mixin member(member)
 	- var twitterUsername = member.twitterUsername || (member.twitter ? member.twitter.replace('@', ''): '');
 	- var githubUsername = member.githubUsername || (member.github ? member.github.replace('@', '') : '');
-	- var linkedinUsername = member.linkedinUsername || (member.website ? member.website.replace('https://www.linkedin.com/in/', '') : '');
+	- var linkedinLink = member.services.linkedin.profileLink;
 
 	li.member-item
 		.member.member--card
@@ -23,7 +23,7 @@ mixin member(member)
 				h5.member__title(class=(member.bio.html ? null : 'member__title-only')): a(href=member.url)= member.name.full
 				if member.bio.html
 					.member__bio!=utils.cropString( utils.htmlToText(member.bio.html), 60, '...', true )
-				if twitterUsername || githubUsername || linkedinUsername
+				if twitterUsername || githubUsername || linkedinLink
 					.member__accounts.hidden-xs
 						if twitterUsername
 							a(href='https://twitter.com/' + twitterUsername, target='_blank', data-toggle='tooltip', data-title='@' + twitterUsername, data-placement='top', data-container='#members').member__account.member__account--twitter.is-tooltip
@@ -31,8 +31,8 @@ mixin member(member)
 						if githubUsername
 							a(href='https://github.com/' + githubUsername, target='_blank', data-toggle='tooltip', data-title=githubUsername, data-placement='top', data-container='#members').member__account.member__account--github.is-tooltip
 								span.entypo-social.entypo-github
-						if linkedinUsername
-							a(href='https://linkedin.com/in/' + linkedinUsername, target='_blank', data-toggle='tooltip', data-title=linkedinUsername, data-placement='top', data-container='#members').member__account.member__account--linkedin.is-tooltip
+						if linkedinLink
+							a(href=linkedinLink, target='_blank', data-toggle='tooltip', data-title=linkedinLink, data-placement='top', data-container='#members').member__account.member__account--linkedin.is-tooltip
 								span.entypo-social.entypo-linkedin
 block content
 	.container

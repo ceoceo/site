@@ -140,6 +140,11 @@ exports = module.exports = function(req, res) {
 						accessToken: locals.authUser.accessToken,
 						refreshToken: locals.authUser.refreshToken
 					});
+
+					// add profile url for linkedin user
+					if (locals.authUser.type === 'linkedin') {
+						userData.services[locals.authUser.type].profileLink = locals.authUser.profileLink
+					}
 					
 					// console.log('[auth.confirm] - Existing user data:', userData);
 					
@@ -190,6 +195,11 @@ exports = module.exports = function(req, res) {
 						
 						accessToken: locals.authUser.accessToken,
 						refreshToken: locals.authUser.refreshToken
+					}
+					
+					// add profile url for linkedin user
+					if (locals.authUser.type === 'linkedin') {
+						userData.services[locals.authUser.type].profileLink = locals.authUser.profileLink
 					}
 					
 					// console.log('[auth.confirm] - New user data:', userData );

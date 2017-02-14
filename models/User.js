@@ -108,6 +108,8 @@ User.add({
 
 			profileId: { type: String, label: 'Profile ID', dependsOn: deps.linkedin },
 
+			profileLink: { type: String, label: 'Profile Link', dependsOn: deps.linkedin },
+
 			username: { type: String, label: 'Username', dependsOn: deps.linkedin },
 			avatar: { type: String, label: 'Image', dependsOn: deps.linkedin },
 
