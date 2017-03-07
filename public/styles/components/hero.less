@@ -15,7 +15,7 @@
 		height: @hero-intro-height-sm;
 		color: #FFF;
 		text-align: center;
-		margin-top: -(@navbar-height + 10) * 2;
+		//margin-top: -(@navbar-height + 10) * 2;
 
 		//- Increase the height on big screens
 		@media (min-width: 1600px) {
@@ -44,19 +44,21 @@
 		}
 		.hero-intro-content {
 			.hv-centered;
-			top: 42%;
-			width: 90%;
+			//top: 42%;
+			width: 50%;
+			left: 40%;
+			text-align: left;
 		}
 		.title {
-			color: currentColor;
+			color: red;
 			text-transform: uppercase;
-			font-weight: 900;
+			//font-weight: 900;
 		}
 		.subtitle {
-			color: fade(white, 50%);
+			color: white;
 			font-family: @font-family-serif;
-			font-size: 1.25em;
-			font-style: italic;
+			//font-size: 1.25em;
+			//font-style: italic;
 			margin-bottom: 1em;
 		}
 		.byline {
@@ -110,14 +112,18 @@
 	}
 }
 .hero-button {
-	.translate(-50%, 50%);
-	background-color: white;
-	border-radius: .75em;
+	//.translate(-50%, 50%);
+	background-color: transparent;
+	//border-radius: .75em;
 	bottom: 0;
 	left: 50%;
 	padding: .5em;
-	position: absolute;
+	//position: absolute;
 	width: 35%;
+	color: red;
+	border-color: red;
+	font-size: 1.5em;
+	margin-right: 40px;
 
 	@media (max-width: @screen-md-max) {
 		width: 60%;
@@ -191,6 +197,29 @@
 	}
 }
 
+
+// Programs
+.programs-img {
+	margin: 0px auto;
+	margin-top: 20px;
+}
+.programs-title {
+	text-align: center;
+	margin-top: 40px;
+}
+.programs-details {
+	text-align: center;
+}
+
+//Talks
+.coming-talk {
+	width: 80%;
+	text-align: center;
+}
+
+
+
+
 // Last meet up
 .hero-meetup--last { }
 
@@ -244,6 +273,7 @@
 		}
 	}
 }
+
 
 // Attending list
 .attending {

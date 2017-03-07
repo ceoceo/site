@@ -2,17 +2,27 @@
 // ------------------------------
 #header {
 	line-height: @navbar-height + 7;
-	background-color: @stanford-red;
-	height: @navbar-height + 10;
+	background-color: black;
+	height: @navbar-height + 50;
 	.floor;
 	.ceiling;
 }
 
 // Header on home page
 #header.header--home {
-	background-color: transparent;
+	.clearfix();
+	margin: 0;
+	font-weight: 500;
+	//background: black;
 }
 
+.navbar {
+	.clearfix();
+	margin: 0;
+	font-weight: 500;
+	//background-color: #800000;
+	height: @navbar-height + 30;
+}
 /*
 // Navbar on home page
 #header.header--home {
@@ -35,16 +45,18 @@
 
 
 // General styles
-.navbar {
+.navbar--links {
 	.clearfix();
 	margin: 0;
 	font-weight: 500;
+	background-color: #800000;
 }
 
 .navbar-header {
 	float: left;
 	margin-right: 30px;
 	line-height: 0;
+	margin-top: 0.5em;
 }
 
 .site-nav-toggle {
@@ -123,6 +135,7 @@ nav {
 
 .navbar-nav.navbar-nav--right {
 	float: right;
+	margin-top: 0.5em;
 }
 
 // Mobile styles
@@ -202,6 +215,7 @@ nav {
 		visibility: hidden;
 		overflow: hidden;
 		background: fade( white, 99% );
+
 
 		nav {
 			.perspective(1200px);
