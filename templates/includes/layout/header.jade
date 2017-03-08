@@ -25,7 +25,7 @@ header(id='header', role='banner',class=(section == 'home' ? 'header--home' : 'h
 				else
 					li: a(href='/signin', data-from=page.path, data-initial='signin').js-auth-trigger Sign in
 					//li: a(href='/join', data-from=page.path).js-auth-trigger Join
-	nav.navbar--links(role='navigation'): .container: .row: .col-sm-10.col-sm-offset-1			
+	nav.navbar--links.visible-md-block.visible-lg-block(role='navigation'): .container: .row: .col-sm-10.col-sm-offset-1			
 		#site-nav
 			nav(role='navigation')
 				ul.navbar-nav.navbar-nav--left
