@@ -22,12 +22,15 @@ footer.site-footer.site-footer--sticky: .container
 					h5.footer-heading Resources
 					ul
 						li: a(href='/organisations') Organisations
-						li: a(href='/links') Links
+						//- li: a(href='/links') Links
 						li: a(href='/blog') Blog
-						li: a(href='/showbag') Showbag
+						//- li: a(href='/showbag') Showbag
 				.col-xs-4
-					h5.footer-heading Sponsors
-					ul: each sponsor in sponsors
-						li: a(href='/organisations#' + sponsor.id)= sponsor.name
+					h5.footer-heading Social Media
+					//- ul: each sponsor in sponsors
+					//- 	li: a(href='/organisations#' + sponsor.id)= sponsor.name
+					ul
+						li: a(href='https://www.linkedin.com/groups/7058836') LinkedIn
+						li: a(href='https://www.facebook.com/CEO.Stanford/') Facebook
 	.row.footer-copyright
 		p Copyright &copy; CEO.

@@ -4,7 +4,7 @@ header(id='header', role='banner',class=(section == 'home' ? 'header--home' : 'h
 		//- Site logo + site nav trigger button (on mobile)
 		.navbar-header
 			a(href='/', title='Back to Home').site-branding
-				img(src="/images/ceo-logo-white-small.png")
+				img(src="/images/ceo-logo-black-long.jpg")
 			//- User avatar
 			if user
 				a(href='/me').user.visible-xs
@@ -30,7 +30,7 @@ header(id='header', role='banner',class=(section == 'home' ? 'header--home' : 'h
 				ul.navbar-nav.navbar-nav--left
 					each link in navLinks
 						li(class=(section == link.key ? 'nav-item-' + link.key + ' active' : 'nav-item-' + link.key)): a(href=link.href)= link.label
-					li: a(href='mailto:yonglisc@gmail.com') Contact
+					li: a(href='mailto:ceowebsite17@gmail.com') Contact
 				ul.navbar-nav.navbar-nav--right.hidden-md.hidden-lg
 					if user
 						li: a(href='/me').user.hidden-xs
