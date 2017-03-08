@@ -14,18 +14,17 @@ header(id='header', role='banner',class=(section == 'home' ? 'header--home' : 'h
 				a#site-nav-toggle(href='javascript:;').site-nav-toggle
 					.patty
 	
-		.col-sm-3.col-sm-offset-2
-			ul.navbar-nav.navbar-nav--right
-					if user
-						li: a(href='/me').user.hidden-xs
-								img(src=(user.photo.exists ? user._.photo.thumbnail(27,27) : user.avatarUrl || '/images/avatar.png'), width=27).img-circle
-								=user.name.first
-						li: a(href='/signout')
-							span.visible-xs Sign out
-							span.entypo.entypo-large.entypo-logout.hidden-xs
-					else
-						li: a(href='/signin', data-from=page.path, data-initial='signin').js-auth-trigger.visible-lg-block Sign in
-						//li: a(href='/join', data-from=page.path).js-auth-trigger Join
+		ul.navbar-nav.navbar-nav--right.visible-lg-block.visible-md-block
+				if user
+					li: a(href='/me').user.hidden-xs
+							img(src=(user.photo.exists ? user._.photo.thumbnail(27,27) : user.avatarUrl || '/images/avatar.png'), width=27).img-circle
+							=user.name.first
+					li: a(href='/signout')
+						span.visible-xs Sign out
+						span.entypo.entypo-large.entypo-logout.hidden-xs
+				else
+					li: a(href='/signin', data-from=page.path, data-initial='signin').js-auth-trigger Sign in
+					//li: a(href='/join', data-from=page.path).js-auth-trigger Join
 	nav.navbar--links(role='navigation'): .container: .row: .col-sm-10.col-sm-offset-1			
 		#site-nav
 			nav(role='navigation')
@@ -33,8 +32,7 @@ header(id='header', role='banner',class=(section == 'home' ? 'header--home' : 'h
 					each link in navLinks
 						li(class=(section == link.key ? 'nav-item-' + link.key + ' active' : 'nav-item-' + link.key)): a(href=link.href)= link.label
 					li: a(href='mailto:yonglisc@gmail.com') Contact
-					li.hidden-lg: a(href='/signin') Sign in
-				//ul.navbar-nav.navbar-nav--right
+				ul.navbar-nav.navbar-nav--right.hidden-md.hidden-lg
 					if user
 						li: a(href='/me').user.hidden-xs
 								img(src=(user.photo.exists ? user._.photo.thumbnail(27,27) : user.avatarUrl || '/images/avatar.png'), width=27).img-circle
