@@ -24,9 +24,12 @@ block intro
 					h1.subtitle We empower and connect entrepreneurs in China and Silicon Valley.
 					a(href='/about')
 						button.hero-button 	WHO WE ARE
-					a(href='/join', data-from=page.path).js-auth-trigger
-						button.hero-button JOIN US
-
+					if user
+						a(href='/me', data-from=page.path).js-auth-trigger
+							button.hero-button MY ACCOUNT
+					else 
+						a(href='/join', data-from=page.path).js-auth-trigger
+							button.hero-button JOIN US
 			//- About
 			section.hero-details: .container
 				.row: .col-sm-10.col-sm-offset-1: .row
