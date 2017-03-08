@@ -4,7 +4,8 @@ header(id='header', role='banner',class=(section == 'home' ? 'header--home' : 'h
 		//- Site logo + site nav trigger button (on mobile)
 		.navbar-header
 			a(href='/', title='Back to Home').site-branding
-				img(src="/images/ceo-logo-black-long.jpg")
+				img.hidden-xs(src="/images/ceo-logo-black-long.jpg")
+				img.visible-xs-block(src="/images/ceo-logo-white-small.png")
 			//- User avatar
 			if user
 				a(href='/me').user.visible-xs
