@@ -3,7 +3,7 @@
 #header {
 	line-height: @navbar-height + 7;
 	background-color: black;
-	height: @navbar-height + 30;
+	height: @navbar-height + 76;
 	.floor;
 	.ceiling;
 }
@@ -140,6 +140,9 @@ nav {
 
 // Mobile styles
 @media (max-width: @screen-sm-max) {
+	#header {
+		height: @navbar-height + 36;
+	}
 	.site-branding {
 		width: 100px;
 		> svg {

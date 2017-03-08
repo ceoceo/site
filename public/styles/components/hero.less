@@ -10,6 +10,7 @@
 @hero-intro-height-xs: 420px;
 #hero {
 	position: relative;
+	.hero-meetup,
 	.hero-intro {
 		position: relative;
 		height: @hero-intro-height-sm;
@@ -78,7 +79,9 @@
 		}
 
 	}
-
+	.hero-intro {
+		margin-top: -@page-padding;
+	}
 	//- Details
 	.hero-details {
 		padding: 6em 0;
