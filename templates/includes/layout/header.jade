@@ -1,19 +1,18 @@
 //- HEADER
 header(id='header', role='banner',class=(section == 'home' ? 'header--home' : 'header--page'))
-	nav.navbar.header--home(role='navigation'): .container: .row 
-		.col-sm-4.col-sm-offset-1
-			//- Site logo + site nav trigger button (on mobile)
-			.navbar-header
-				a(href='/', title='Back to Home').site-branding
-					img(src="/images/ceo-logo-white-small.png")
-				//- User avatar
-				if user
-					a(href='/me').user.visible-xs
-						img(src=(user.photo.exists ? user._.photo.thumbnail(60,60) : user.gravatarUrl || '/images/avatar.png'), width=27).img-circle
-				//- Patty
-				a#site-nav-toggle(href='javascript:;').site-nav-toggle
-					.patty
-	
+	nav.navbar.header--home(role='navigation'): .container
+		//- Site logo + site nav trigger button (on mobile)
+		.navbar-header
+			a(href='/', title='Back to Home').site-branding
+				img(src="/images/ceo-logo-white-small.png")
+			//- User avatar
+			if user
+				a(href='/me').user.visible-xs
+					img(src=(user.photo.exists ? user._.photo.thumbnail(60,60) : user.gravatarUrl || '/images/avatar.png'), width=27).img-circle
+			//- Patty
+			a#site-nav-toggle(href='javascript:;').site-nav-toggle.navbar-nav--right
+				.patty
+
 		ul.navbar-nav.navbar-nav--right.visible-lg-block.visible-md-block
 				if user
 					li: a(href='/me').user.hidden-xs
@@ -25,7 +24,7 @@ header(id='header', role='banner',class=(section == 'home' ? 'header--home' : 'h
 				else
 					li: a(href='/signin', data-from=page.path, data-initial='signin').js-auth-trigger Sign in
 					//li: a(href='/join', data-from=page.path).js-auth-trigger Join
-	nav.navbar--links(role='navigation'): .container: .row: .col-sm-10.col-sm-offset-1			
+	nav.navbar--links(role='navigation'): .container
 		#site-nav
 			nav(role='navigation')
 				ul.navbar-nav.navbar-nav--left
