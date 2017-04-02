@@ -1,7 +1,24 @@
 //
-// Timeline
+// Call to Action
 // ==============================
 
+.meetup-cta .hero-button-title {
+    color: inherit;
+    position: static;
+    margin-bottom: 1rem;
+}
+
+.meetup-cta .btn-lg {
+	max-height: @btn-hero-size;
+    min-height: @btn-hero-size;
+}
+
+
+
+
+//
+// Timeline
+// ==============================
 
 .page-about .iy-body {
 	padding-bottom: 0;
@@ -84,7 +101,8 @@
 
 	&:hover,
 	&:focus {
-		color: @gray;
+		background-color: fade(@white, 50%);
+		color: inherit;
 		outline: none;
 		text-decoration: none;
 
@@ -112,7 +130,7 @@
 		.timeline-item-node {
 			left: 0;
 			width: 20px;
-			
+
 			&:after {
 				margin-left: -(@timeline-node / 2);
 			}
@@ -142,7 +160,7 @@
 
 		.timeline-item-node {
 			right: 0;
-			
+
 			&:after {
 				margin-right: -(@timeline-node / 2);
 				right: 0;
@@ -156,7 +174,7 @@
 
 		.timeline-item-node {
 			left: 0;
-			
+
 			&:after {
 				margin-left: -(@timeline-node / 2);
 			}

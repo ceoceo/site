@@ -15,6 +15,7 @@
 	border: 1px solid transparent; // For input.btn
 	cursor: pointer;
 	display: inline-block;
+	outline: none !important;
 	line-height: @line-height-base;
 	margin-bottom: 0; // For input.btn
 	text-align: center;
@@ -70,6 +71,24 @@
 }
 .btn-danger {
 	.button-base(@btn-danger-color; @btn-danger-bg; @btn-danger-border);
+}
+
+// hero
+
+.hero-button .btn-lg {
+	max-height: @btn-hero-size;
+    min-height: @btn-hero-size;
+}
+
+.btn-decline {
+	font-weight: @font-weight-light;
+	.text-hero(.75);
+}
+
+@media (min-width: @screen-xs-min) {
+	.btn-decline {
+		.text-hero(1);
+	}
 }
 
 // social
