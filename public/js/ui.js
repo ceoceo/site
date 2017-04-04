@@ -132,14 +132,15 @@ $(function() {
 			$decline = $('.js-rsvp-decline');
 
 		var toggleRSVP = function(attending) {
-			console.log("toggleRSVP function", attending)
-			console.log("here is the meetup", meetup)
 			$.ajax({
 				url: '/api/me/meetup',
 				type: 'POST',
 				data: {
 					meetup: meetup.id,
 					attending: attending
+				},
+				success: function(data) {
+					window.location.reload();
 				}
 			})
 		};
@@ -147,7 +148,6 @@ $(function() {
 
 
 		$attending.click(function() {
-			console.log('clicked attending');
 			$attending.addClass('btn-success').closest('.meetup-toggle')
 				.find('.js-rsvp-decline')
 				.removeClass('btn-danger')
@@ -160,7 +160,6 @@ $(function() {
 		});
 
 		$decline.click(function() {
-			console.log(' clicked decline');
 			$decline.addClass('btn-danger').closest('.meetup-toggle')
 				.find('.js-rsvp-attending')
 				.removeClass('btn-success')

@@ -28,7 +28,7 @@ mixin meetup(meetup)
 				if user
 					if meetup.rsvpsAvailable
 						h4.hero-button-title
-							if !rsvpStatus.rsvped && rsvpStatus.attending
+							if rsvpStatus.rsvped && rsvpStatus.attending
 								span RSVP Confirmed!
 							else
 								span Are you coming?&nbsp;
