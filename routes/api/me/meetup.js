@@ -3,12 +3,12 @@ var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
 
-	console.log("User ID is", req.user._id);
-	console.log("The meetup is", req.body.data.meetup)
+	// console.log("User ID is", req.user._id);
+	// console.log("The meetup is", req.body.meetup);
 	
 	RSVP.model.findOne()
 		.where('who', req.user._id)
-		.where('meetup', req.body.data.meetup)
+		.where('meetup', req.body.meetup)
 		.exec(function(err, rsvp) {
 		
 			if (req.body.statusOnly) {
@@ -26,18 +26,18 @@ exports = module.exports = function(req, res) {
 					console.log("==========rsvp=============")
 					console.log("req.body.attending", req.body);
 					rsvp.set({
-						attending: req.body.data.attending
+						attending: req.body.attending
 					}).save(function(err) {
 						if (err) return res.apiResponse({ success: false, err: err });
-						return res.apiResponse({ success: true, attending: req.body.data.attending });
+						return res.apiResponse({ success: true, attending: req.body.attending });
 					});
 				
 				} else {
 					console.log("==========saving to rsvp model=============")
 					new RSVP.model({
-						meetup: req.body.data.meetup,
+						meetup: req.body.meetup,
 						who: req.user,
-						attending: req.body.data.attending
+						attending: req.body.attending
 					}).save(function(err) {
 						if (err) return res.apiResponse({ success: false, err: err });
 						return res.apiResponse({ success: true });
