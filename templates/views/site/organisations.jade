@@ -4,8 +4,8 @@ include ../../mixins/organisation
 
 block intro
 	.page-intro: .container
-		h1 Organisations
-		p.lead The organisations and people who are part of CEO. Should you be here? Join us!
+		h1 Organizations
+		p.lead The organizations and people who are part of CEO. Should you be here? Join us!
 		//- .buttons
 			if !user
 				a(href='/join').btn.btn-primary Join CEO
@@ -21,4 +21,4 @@ block content
 						hr
 					+organisation(org)
 			else
-				h3.text-muted There are no organisations yet.
+				h3.text-muted There are no organizations yet.
