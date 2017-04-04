@@ -37,6 +37,7 @@ exports = module.exports = function(req, res) {
 					new RSVP.model({
 						meetup: req.body.meetup,
 						who: req.user,
+						email: req.user.email,
 						attending: req.body.attending
 					}).save(function(err) {
 						if (err) return res.apiResponse({ success: false, err: err });

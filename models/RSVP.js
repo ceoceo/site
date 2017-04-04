@@ -11,6 +11,7 @@ var RSVP = new keystone.List('RSVP');
 RSVP.add({
 	meetup: { type: Types.Relationship, ref: 'Meetup', required: true, initial: true, index: true },
 	who: { type: Types.Relationship, ref: 'User', required: true, initial: true, index: true },
+	email: { type: Types.Email, ref: 'User', required: true, initial: true, index: true },
 	attending: { type: Types.Boolean, index: true },
 	createdAt: { type: Date, noedit: true, collapse: true, default: Date.now },
 	changedAt: { type: Date, noedit: true, collapse: true }
@@ -47,6 +48,6 @@ RSVP.schema.post('remove', function() {
  * ============
  */
 
-RSVP.defaultColumns = 'meetup, who, createdAt';
+RSVP.defaultColumns = 'meetup, who, email, attending, createdAt';
 RSVP.defaultSort = '-createdAt';
 RSVP.register();
