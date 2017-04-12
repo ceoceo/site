@@ -13,8 +13,12 @@ block intro
 				| . Stay in the loop - 
 				a(href='https://www.linkedin.com/groups/7058836', target='_blank') follow our Linkedin group
 
-		if upcomingMeetup
-			+meetup(upcomingMeetup)
+		//- if upcomingMeetup
+		//- 	+meetup(upcomingMeetup)
+
+		if upcomingMeetups
+			each meetup, i in upcomingMeetups
+				+meetup(meetup)
 block content
 	.page-content: .container
 		.timeline

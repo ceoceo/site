@@ -3,6 +3,7 @@ include meetup-talk
 mixin meetup(meetup)
 
 	- var today = new Date();
+	- var rsvpStatus = rsvpStatus || meetup.rsvpStatus
 
 	.tile.ph-1.pv-1
 		.meetup-calendar.calendar.hidden-xs.hidden-sm(class=meetup.state == 'past' ? 'calendar--past' : null)
@@ -39,7 +40,7 @@ mixin meetup(meetup)
 						.alert.alert-success.mb-0.text-center No more tickets&hellip;
 
 				else
-					#next-meetup(data-id=meetup.id)
+					.next-meetup(data-id=meetup.id)
 						if meetup.rsvpsAvailable
 							a(href='/join', data-from=page.path).btn.btn-primary.btn-lg.btn-block.js-auth-trigger RSVP Now 
 								span.text-thin (#{plural(meetup.remainingRSVPs, '* spot left', '* spots left')})

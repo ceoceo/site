@@ -121,22 +121,20 @@ $(function() {
 	// Handle attendence
 	// ------------------------------
 
-	var $nextMeetup = $('#next-meetup');
-	if ($nextMeetup.length) {
+	// var $nextMeetup = $('#next-meetup');
+	var $activeMeetups = $('.active-meetup');
+	$activeMeetups.each(function() {
+		var meetupId = $(this).data().id;
+		var $attending = $('.js-rsvp-attending[data-id="' + meetupId + '"]'),
+			$decline = $('.js-rsvp-decline[data-id="' + meetupId + '"]');
 
-		if (!$('.meetup-toggle').length) return;
-
-		var meetup = $nextMeetup.data();
-
-		var $attending = $('.js-rsvp-attending'),
-			$decline = $('.js-rsvp-decline');
 
 		var toggleRSVP = function(attending) {
 			$.ajax({
 				url: '/api/me/meetup',
 				type: 'POST',
 				data: {
-					meetup: meetup.id,
+					meetup: meetupId,
 					attending: attending
 				},
 				success: function(data) {
@@ -176,7 +174,7 @@ $(function() {
 			type: 'POST',
 			data: {
 				statusOnly: true,
-				meetup: meetup.id
+				meetup: meetupId
 			},
 			success: function(data) {
 				if (data.rsvped) {
@@ -187,7 +185,8 @@ $(function() {
 				}
 			}
 		});
-	}
+
+	})
 
 	// Clean up URL if signed in via Facebook, see - https://github.com/jaredhanson/passport-facebook/issues/12
 	if (window.location.hash && window.location.hash === "#_=_") {

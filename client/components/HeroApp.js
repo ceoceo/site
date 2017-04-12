@@ -78,12 +78,12 @@ var HeroApp = React.createClass({
 				<div className="hero-button">
 					<div id="next-meetup" data-id={this.state.meetup._id} className="form-row meetup-toggle">
 						<div className="col-xs-8">
-							<button type="button" onClick={this.toggleRSVP.bind(this, true)} className={"btn btn-lg btn-block btn-default js-rsvp-attending " + attending}>
+							<button data-id={this.state.meetup._id} type="button" onClick={this.toggleRSVP.bind(this, true)} className={"btn btn-lg btn-block btn-default js-rsvp-attending " + attending}>
 								<span>You're coming!</span>
 							</button>
 						</div>
 						<div className="col-xs-4">
-							<button type="button" onClick={this.toggleRSVP.bind(this, false)} className={"btn btn-lg btn-block btn-default btn-decline js-rsvp-decline " + notAttending}>Can't make it?</button>
+							<button data-id={this.state.meetup._id} type="button" onClick={this.toggleRSVP.bind(this, false)} className={"btn btn-lg btn-block btn-default btn-decline js-rsvp-decline " + notAttending}>Can't make it?</button>
 						</div>
 					</div>
 				</div>

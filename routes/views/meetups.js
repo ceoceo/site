@@ -18,6 +18,12 @@ exports = module.exports = function(req, res) {
 			.sort('-startDate')
 	, 'talks[who]');
 	
+	view.query('upcomingMeetups',
+		Meetup.model.find()
+			.where('state', 'active')
+			.sort('-startDate')
+	, 'talks[who]');
+
 	view.query('pastMeetups',
 		Meetup.model.find()
 			.where('state', 'past')
@@ -26,16 +32,34 @@ exports = module.exports = function(req, res) {
 	
 	view.on('render', function(next) {
 	
-		if (!req.user || !locals.upcomingMeetup) return next();
+		if (!req.user || !locals.upcomingMeetups) return next();
 		
-		RSVP.model.findOne()
+		RSVP.model.find()
 			.where('who', req.user._id)
-			.where('meetup', locals.upcomingMeetup)
-			.exec(function(err, rsvp) {
-				locals.rsvpStatus = {
-					rsvped: rsvp ? true : false,
-					attending: rsvp && rsvp.attending ? true : false
-				}
+			.where('meetup') 
+			.in(locals.upcomingMeetups)
+			.exec(function(err, rsvps) {
+				// locals.rsvpStatus = {
+				// 	rsvped: rsvp ? true : false,
+				// 	attending: rsvp && rsvp.attending ? true : false
+				// }
+				locals.upcomingMeetups = locals.upcomingMeetups.map(function(meetup) {
+					rsvps.forEach(function(rsvp) {
+						if (rsvp.meetup === meetup.id) {
+							meetup.rsvpStatus = {
+								rsvped: rsvp ? true : false,
+								attending: rsvp && rsvp.attending ? true : false
+							}
+						}
+					})
+					if (!meetup.rsvpStatus) {
+						meetup.rsvpStatus = {
+							rsvped: false, 
+							attending: false
+						}
+					}
+					return meetup
+				})
 				return next();
 			});
 			
