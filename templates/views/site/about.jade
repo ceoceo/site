@@ -21,7 +21,15 @@ block content
 			br
 			br
 			.row.about-organisers
-				each org in vporganisers
+				.col-sm-2
+				each org in vporganisers1
+					.col-sm-3
+						+organiser(org)
+			br
+			br
+			.row.about-organisers
+				.col-sm-3
+				each org in vporganisers2
 					.col-sm-3
 						+organiser(org)
 
