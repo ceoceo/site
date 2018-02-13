@@ -45,8 +45,8 @@
     "fsevents": "*"
   },
   "engines": {
-    "node": "~4.2.0",
-    "npm": "~2.14.3"
+    "node": "~6.12.0",
+    "npm": "~3.10.0"
   },
   "scripts": {
     "start": "node keystone.js",
