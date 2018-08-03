@@ -9,19 +9,19 @@ exports = module.exports = function(req, res) {
 	locals.page.title = 'About CEO';
 
 	locals.organisers = [
-		{ name: '王竞凡',    image: '/images/organiser-wjf.jpg',    linkedin: 'jingfan-wang',   field: '能源工程博士', title: 'Co-President' },
-		{ name: '朱元欣(Cindy)',     image: '/images/organiser-zyx.jpg',     linkedin: 'cindy-yuanxin-zhu-6b460924',   field: 'MBA', title: 'Co-President' }
+		{ name: '谢天宇',    image: '/images/organiser-xty.jpg',    linkedin: '',   field: '人类学博士', title: 'Co-President' },
+		{ name: '王博闻(April)',     image: '/images/organiser-april.jpg',     linkedin: '',   field: 'MBA', title: 'Co-President' }
 	]
 
 	locals.vporganisers1 = [
-		{ name: '韩文',    image: '/images/organiser-hw.jpg',    linkedin: '',   field: 'MBA', title: 'CFO' },
-		{ name: '谢天宇', image: '/images/organiser-xty.jpg', linkedin: '', field: '人类学博士', title: 'VP (Marketing)' },
-		{ name: '阮珊珊(Sherry)',    image: '/images/organiser-rss.jpg',    linkedin: 'sherrysruan',   field: '计算机科学博士', title: 'VP (BD)' }
+		{ name: 'Eric Zhang',    image: '/images/organiser-eric.jpg',    linkedin: '',   field: 'MBA', title: 'CFO' },
+		{ name: '郑怡(Alice)', image: '/images/organiser-alice.jpg', linkedin: '', field: 'Product Design & Computer Science', title: 'VP (Marketing)' },
+		{ name: 'Yanyan Tong',    image: '/images/organiser-yanyan.jpg',    linkedin: '',   field: 'MS in Computer Science', title: 'VP (Operations)' }
 	]
 
 	locals.vporganisers2 = [
-		{ name: '胡冯钦 (Angel)',    image: '/images/organiser-hfq.jpg',    linkedin: '',   field: 'MS&E 硕士', title: 'VP (Operations)' },
-		{ name: '孙卿云', image: '/images/organiser-sqy.jpg', linkedin: '', field: '数学博士', title: 'CIO' }
+		{ name: '张霄',    image: '/images/organiser-zx.jpg',    linkedin: '',   field: 'Applied Physics PhD', title: 'VP (Innovation Mixer)' },
+		{ name: '周亦同', image: '/images/organiser-zyt.jpg', linkedin: '', field: 'MS in Materials Science and Engineering', title: 'VP (BD)' }
 	]
 
 	view.render('site/about');
