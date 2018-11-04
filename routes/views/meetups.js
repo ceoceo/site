@@ -5,19 +5,19 @@ var keystone = require('keystone'),
 var Meetup = keystone.list('Meetup');
 
 exports = module.exports = function(req, res) {
-	
+
 	var view = new keystone.View(req, res),
 		locals = res.locals;
-	
+
 	locals.section = 'meetups';
 	locals.page.title = 'Meetups - CEO';
-	
+
 	view.query('upcomingMeetup',
 		Meetup.model.findOne()
 			.where('state', 'active')
 			.sort('-startDate')
 	, 'talks[who]');
-	
+
 	view.query('upcomingMeetups',
 		Meetup.model.find()
 			.where('state', 'active')
@@ -29,14 +29,14 @@ exports = module.exports = function(req, res) {
 			.where('state', 'past')
 			.sort('-startDate')
 	, 'talks[who]');
-	
+
 	view.on('render', function(next) {
-	
+
 		if (!req.user || !locals.upcomingMeetups) return next();
-		
+
 		RSVP.model.find()
 			.where('who', req.user._id)
-			.where('meetup') 
+			.where('meetup')
 			.in(locals.upcomingMeetups)
 			.exec(function(err, rsvps) {
 				// locals.rsvpStatus = {
@@ -54,7 +54,7 @@ exports = module.exports = function(req, res) {
 					})
 					if (!meetup.rsvpStatus) {
 						meetup.rsvpStatus = {
-							rsvped: false, 
+							rsvped: false,
 							attending: false
 						}
 					}
@@ -62,9 +62,9 @@ exports = module.exports = function(req, res) {
 				})
 				return next();
 			});
-			
+
 	});
-	
+
 	view.render('site/meetups');
-	
+
 }
